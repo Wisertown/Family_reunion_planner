@@ -1,0 +1,49 @@
+* {
+ font-family: 'Slabo 27px', serif;
+}
+input {
+	width: 160px;
+	height: 18px;
+    
+  	border: solid 1px #fff;
+  	box-shadow: inset 1px 1px 2px 0 #707070;
+  	
+}
+
+#head {
+	margin-left: 100px;
+	width: 900px;
+	height: 300px;
+}
+
+.pic1 {
+	margin-left: 230px;
+	width: 900px;
+	height: 300px;
+}
+#wrapper {
+	width: 900px;
+	height: 630px;
+	outline: 1px solid black;
+	margin-left: 230px;
+}
+
+#welc {
+	margin-left: 250px;
+	padding-top: 20px;
+
+}
+
+#portal	{
+	margin-left: 340px;
+}
+
+.btn {
+	width: 100px;
+	height: 40px;
+	border-radius: 10px;
+	background-color: #3333FF;
+	font-size:100%;
+	color: white;
+}
+
