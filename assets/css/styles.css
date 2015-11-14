@@ -9,6 +9,12 @@ input {
   	box-shadow: inset 1px 1px 2px 0 #707070;
   	
 }
+#chunk {
+	outline: black dotted 1px;
+	width: 1425px;
+	height: 1400px;
+	background-color: rgba(192,192,192,0.3);
+}
 
 #head {
 	margin-left: 100px;
@@ -17,13 +23,15 @@ input {
 }
 
 .pic1 {
+	padding-top: 50px;
 	margin-left: 230px;
 	width: 900px;
-	height: 300px;
+	height: 450px;
 }
 #wrapper {
+	background-color: white;
 	width: 900px;
-	height: 630px;
+	height: 800px;
 	outline: 1px solid black;
 	margin-left: 230px;
 }
@@ -35,7 +43,7 @@ input {
 }
 
 #portal	{
-	margin-left: 340px;
+	margin-left: 330px;
 }
 
 .btn {
@@ -45,5 +53,14 @@ input {
 	background-color: #3333FF;
 	font-size:100%;
 	color: white;
+}
+
+#error {
+	font-size: large;
+	color: red;
+}
+#success {
+	font-size: large;
+	color: green;
 }
 
