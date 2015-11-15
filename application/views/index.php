@@ -11,25 +11,10 @@
 		<head id="head">
 			<img class="pic1" src="/assets/img/Smith_family.jpg" alt="The smith family">
 		</head>
-		<div class="leftnav">
-			
-		</div>
+		
 		<div id="wrapper">
 			<h1 id="welc">Welcome Smith Family Member!</h1>
 			<div id="portal">
-				
-				<div id="register">
-					<h4>Please Register or Login</h4>
-					<h3>Register</h3>
-					<form action="Users/register" method="post">
-						<p>Name: <input type="text" name="name"></p>
-						<p>Username: <input type="text" name="username"></p>
-						<p>Password: <input type="password" name="password"></p>
-							<h5>*Password should be at least 8 characters</h5>
-						<p>Confirm Password: <input type="password" name="pw_confirm"></p>
-						<input class="btn" type="submit" value="Register">
-					</form>
-				</div>
 				<div id="login">
 					<h3>Login</h3>
 					<form action="Users/login" method="post">
@@ -47,5 +32,6 @@
 			</div>
 		</div>
 	</div>
+	<a href="/admin"><p>admin</p></a>
 </body>
 </html>

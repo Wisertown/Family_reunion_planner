@@ -20,6 +20,10 @@ class Users extends CI_Controller {
 			redirect('/');
 		}
 	}
+		public function admin()
+	{
+		$this->load->view('/admin');
+	}
 
 }
 ?>
