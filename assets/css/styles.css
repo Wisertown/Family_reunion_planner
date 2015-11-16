@@ -31,13 +31,13 @@ input {
 #wrapper {
 	background-color: white;
 	width: 900px;
-	height: 400px;
+	min-height: 550px;
 	outline: 1px solid black;
 	margin-left: 230px;
 }
 
 #welc {
-	margin-left: 250px;
+	margin-left: 165px;
 	padding-top: 20px;
 
 }

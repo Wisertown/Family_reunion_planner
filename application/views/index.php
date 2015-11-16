@@ -13,15 +13,24 @@
 		</head>
 		
 		<div id="wrapper">
-			<h1 id="welc">Welcome Smith Family Member!</h1>
+			<h1 id="welc">Welcome To The Smith Family Reunion Page!</h1>
 			<div id="portal">
 				<div id="login">
-					<h3>Login</h3>
+					<h3>Please Login</h3>
 					<form action="Users/login" method="post">
 						<p>Username: <input type="text" name="username">
 						<p>Password: <input type="password" name="password"></p>
 						<input class="btn" type="submit" value="Login">
 					</form>
+					<h4>Don't have a username or Password?</h4>
+					<h4>Please email Uncle Bob</h4>
+					<form method="post">
+  					Email: <input name="email" type="text" /><br />
+  					Subject: <input name="subject" type="text" /><br />
+  					Message:<br />
+  					<textarea name="comment" rows="5" cols="40"></textarea><br />
+  					<input class="btn" type="submit" value="Submit" />
+  					</form>
 				</div>
 				<div>
 					<?= $this->session->flashdata("success_message"); ?>
