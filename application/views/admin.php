@@ -8,16 +8,12 @@
 </head>
 <body>
 	<div id="register">
-		<h4>Please Register or Login</h4>
-		<h3>Register</h3>
-		<form action="Users/register" method="post">
-			<p>Name: <input type="text" name="name"></p>
-			<p>Username: <input type="text" name="username"></p>
-			<p>Password: <input type="password" name="password"></p>
-				<h5>*Password should be at least 8 characters</h5>
-			<p>Confirm Password: <input type="password" name="pw_confirm"></p>
-			<input class="btn" type="submit" value="Register">
-		</form>
+		<h3>Please Login</h3>
+			<form action="/adminlogin" method="post">
+				<p>Username: <input type="text" name="username">
+				<p>Password: <input type="password" name="password"></p>
+				<input class="button" type="submit" value="Login">
+			</form>
 	</div>
 </body>
 </html>

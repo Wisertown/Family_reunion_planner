@@ -43,6 +43,27 @@ class User extends CI_Model {
 			}
 		}
 	}
+	public function adminlogin($post)
+	{
+		$this->form_validation->set_rules("username", "Username", "trim|required");
+		$this->form_validation->set_rules("password", "Password", "trim|required");
+		if($this->form_validation->run() === FALSE) {
+		     $this->session->set_flashdata("errors", validation_errors());
+		     return FALSE;
+		} else {
+			$query = "SELECT * FROM admin WHERE username = ? AND password = ?";
+			$values = array($post['username'], $post['password']);
+			$user = $this->db->query($query, $values)->row_array();
+			if(empty($user)) {
+				$this->session->set_flashdata("errors", "<p id='error'>The username or password you entered is invalid.</p>");
+				return FALSE;
+			} else {
+				$this->session->set_userdata('id', $user['id']);
+				return TRUE;
+			}
+		}
+	}
+
 }
 
 

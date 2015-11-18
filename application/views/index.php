@@ -25,7 +25,8 @@
 					<h4>Don't have a username or Password?</h4>
 					<h4>Please email Uncle Bob</h4>
 					<form method="post">
-  					Email: <input name="email" type="text" /><br />
+						From: <input type="from" type="email"/><br />
+  					<input name="address" type="hidden" value="aaron.wise253@gmail.com"/><br />
   					Subject: <input name="subject" type="text" /><br />
   					Message:<br />
   					<textarea name="comment" rows="5" cols="40"></textarea><br />
@@ -41,6 +42,6 @@
 			</div>
 		</div>
 	</div>
-	<a href="/admin"><p>admin</p></a>
+	<a href="Users/admin"><p>admin</p></a>
 </body>
 </html>

@@ -20,10 +20,27 @@ class Users extends CI_Controller {
 			redirect('/');
 		}
 	}
-		public function admin()
+	public function admin()
 	{
 		$this->load->view('/admin');
 	}
+	public function adminlogin()
+	{
+		if($this->User->adminlogin($this->input->post())){
+			redirect('/admindash');
+		}else{
+			redirect('/');
+		}
 
+	}
+	public function show_ad()
+	{
+		$this->load->view('/admindash');
+	}
+	// public function showusers()
+	// {
+	// 	$useredits = $this->User->get_users_ad();
+	// 	$this->load->view('admindash', array("useredits"=>$useredits));
+	// }
 }
 ?>
