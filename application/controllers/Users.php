@@ -10,7 +10,7 @@ class Users extends CI_Controller {
 	public function register()
 	{
 		$this->User->register($this->input->post());
-		redirect('/');
+		redirect('/admindash');
 	}
 	public function login()
 	{
@@ -35,11 +35,11 @@ class Users extends CI_Controller {
 	}
 	public function show_ad()
 	{
-		$this->load->view('/admindash');
+		$useredits = $this->User->get_users_ad();
+		$this->load->view('/admindash', array("useredits"=>$useredits));
 	}
 	// public function showusers()
 	// {
-	// 	$useredits = $this->User->get_users_ad();
 	// 	$this->load->view('admindash', array("useredits"=>$useredits));
 	// }
 }

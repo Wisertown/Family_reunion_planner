@@ -12,11 +12,18 @@
 		<p>Name: <input type="text" name="name"></p>
 		<p>Username: <input type="text" name="username"></p>
 		<p>Password: <input type="password" name="password"></p>
-		<input type="hidden" name="admin_id">
 			<h5>*Password should be at least 8 characters</h5>
 		<p>Confirm Password: <input type="password" name="pw_confirm"></p>
 		<input class="btn" type="submit" value="Register">
 	</form>
+	<div>
+		<?= $this->session->flashdata("success_message"); ?>
+	</div>
+	<div id="errors">
+		<?= $this->session->flashdata("errors"); ?>
+	</div>
+	<br>
+	<h3>All Current Users</h3>
 	<table id="userview_edit">
 		<tr>
 			<th>id</th>
@@ -29,19 +36,28 @@
 			<th>switch status</th>
 			<th>created - by (admin)</th>
 			<th>edit</th>
+			<th>Delete</th>
 		</tr>
+		<?php foreach($useredits as $user_e) { ?>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>	
+			<td><?= $user_e['id'] ?></td>
+			<td><?= $user_e['name'] ?></td>
+			<td><?= $user_e['username'] ?></td>
+			<td><?= $user_e['password'] ?></td>
+			<td><?= $user_e['created_at'] ?></td>
+			<td><?= $user_e['updated_at'] ?></td>
+			<td><?= $user_e['votes'] ?></td>
+			<td><?= $user_e['switch'] ?></td>
+			<td><?= $user_e['admin'] ?></td>
+			<td><a href="/edit/<?= $user_e['id'] ?>">Edit this person</a></td>
+			<td>
+				<form action="/delete/<?= $user_e['id'] ?>" method="post">
+					<input type="submit" class="button" value="DELETE">
+				</form>
+			</td>
+		</tr>
+		<?php } ?>	
 	</table>
+	<a href="/Trips/logout_user"><p>Logout</p></a>
 </body>
 </html>

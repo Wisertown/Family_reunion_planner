@@ -14,8 +14,8 @@ class User extends CI_Model {
 		{
 			$this->session->set_flashdata('errors', validation_errors());
 		} else {
-	        $query = "INSERT INTO users (name, username, password, created_at, updated_at) VALUES (?,?,?, NOW(), NOW())";
-	        $values = array($post['name'],$post['username'],$post['password']);
+	        $query = "INSERT INTO users(name, username, password, created_at,updated_at, admin_id)  VALUES (?,?,?, NOW(), NOW(), ?)";
+	        $values = array($post['name'],$post['username'],$post['password'], $this->session->userdata('id'));
 	        $this->db->query($query,$values);
 	        $this->session->set_flashdata('success_message', '<p id="sucess">You have registered succesfully, please login</p>');
 		}
@@ -63,7 +63,10 @@ class User extends CI_Model {
 			}
 		}
 	}
-
+	public function get_users_ad(){
+		$query = "SELECT users.id, users.name, users.username, users.password, users.created_at, users.updated_at, users.votes, users.switch, users.admin_id, admin.username as admin from users join admin on users.admin_id = admin.id;";
+		return $this->db->query($query)->result_array();
+	}
 }
 
 
