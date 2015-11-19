@@ -16,6 +16,11 @@
 	background-color: rgba(192,192,192,0.3);
 }
 
+.flash {
+	margin-left: 19%;
+	color:red;
+}
+
 #head {
 	margin-left: 100px;
 	width: 900px;
@@ -23,7 +28,7 @@
 }
 
 .pic1 {
-	padding-top: 50px;
+	padding-top: 25px;
 	margin-left: 230px;
 	width: 900px;
 	height: 450px;
@@ -31,21 +36,65 @@
 #wrapper {
 	background-color: white;
 	width: 900px;
-	min-height: 550px;
+	min-height: 400px;
 	outline: 1px solid black;
 	margin-left: 230px;
 }
 
 #welc {
-	margin-left: 165px;
+	margin-left: 26%;
 	padding-top: 20px;
 
 }
+.loginbubble{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+100;Gren+3D */
+background: #eeeeee; /* Old browsers */
+background: -moz-linear-gradient(top,  #eeeeee 0%, #cccccc 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #eeeeee 0%,#cccccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
 
-#portal	{
-	margin-left: 330px;
-	padding-bottom: 15px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 23%;
+	outline: 1px solid black;
+	width: 17%;
 }
+.emailbubble {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+100;Gren+3D */
+background: #eeeeee; /* Old browsers */
+background: -moz-linear-gradient(top,  #eeeeee 0%, #cccccc 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #eeeeee 0%,#cccccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+
+	display: inline-block;
+	vertical-align: top;
+	margin-left:5%;
+	outline: 1px solid black;
+	width: 27%;
+}
+
+	#login {
+		display: inline-block;
+		margin-left: 25%;
+		width: 150px;
+		height: 300px;
+		
+		
+	}
+		.in {
+			width: 110px;
+			height: 25px;
+		
+		}
+	#email {
+		vertical-align: top;
+		display: inline-block;
+		margin-left: 12%;
+		padding: 0 0 10px 5px;
+		
+	}
 
 .btn {
 	width: 100px;

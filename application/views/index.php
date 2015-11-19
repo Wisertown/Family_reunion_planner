@@ -12,27 +12,8 @@
 			<img class="pic1" src="/assets/img/Smith_family.jpg" alt="The smith family">
 		</head>
 		
-		<div id="wrapper">
-			<h1 id="welc">Welcome To The Smith Family Reunion Page!</h1>
-			<div id="portal">
-				<div id="login">
-					<h3>Please Login</h3>
-					<form action="Users/login" method="post">
-						<p>Username: <input type="text" name="username">
-						<p>Password: <input type="password" name="password"></p>
-						<input class="btn" type="submit" value="Login">
-					</form>
-					<h4>Don't have a username or Password?</h4>
-					<h4>Please email Uncle Bob</h4>
-					<form method="post">
-						From: <input type="from" type="email"/><br />
-  					<input name="address" type="hidden" value="aaron.wise253@gmail.com"/><br />
-  					Subject: <input name="subject" type="text" /><br />
-  					Message:<br />
-  					<textarea name="comment" rows="5" cols="40"></textarea><br />
-  					<input class="btn" type="submit" value="Submit" />
-  					</form>
-				</div>
+		<h1 id="welc">Welcome To The Smith Family Reunion Page!</h1>
+			<div class="flash">
 				<div>
 					<?= $this->session->flashdata("success_message"); ?>
 				</div>
@@ -40,7 +21,32 @@
 					<?= $this->session->flashdata("errors"); ?>
 				</div>
 			</div>
-		</div>
+			<div class="loginbubble">
+				<div id="login">
+					<h3>Please Login</h3>
+					<form action="Users/login" method="post">
+						<p>Username: <input class="in" type="text" name="username">
+						<p>Password: <input class="in" type="password" name="password"></p>
+						<input class="btn" type="submit" value="Login">
+					</form>
+				</div>
+			</div>
+			<div class="emailbubble">
+				<div id="email">
+					<h3>Don't have a username or Password?</h3>
+					<h4>Please email Uncle Bob</h4>
+					<form method="post">
+						From: <input class="in" type="from" type="email"/><br />
+  					<input class="in" name="address" type="hidden" value="aaron.wise253@gmail.com"/><br />
+  					Subject: <input class="in" name="subject" type="text" /><br />
+  					<br>
+  					Message:<br />
+  					<textarea name="comment" rows="5" cols="40"></textarea><br />
+  					<input class="btn" type="submit" value="Submit" />
+  					</form>
+				</div>
+			</div>
+		
 	</div>
 	<a href="Users/admin"><p>admin</p></a>
 </body>

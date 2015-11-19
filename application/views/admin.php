@@ -14,6 +14,7 @@
 				<p>Password: <input type="password" name="password"></p>
 				<input class="button" type="submit" value="Login">
 			</form>
+			<h4><a href="/">Return to Main</a></h4>
 	</div>
 </body>
 </html>
