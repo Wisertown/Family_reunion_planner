@@ -168,3 +168,49 @@ td, th {
 	margin-left: 5%;
 }
 
+.holder {
+	width: 100%;
+	height: 100%;
+ 	background-color:#FDF3E7;
+
+
+}
+	.beach {
+		margin-top: 1%;
+		margin-bottom: 1%;
+		border-radius: 5px;
+		margin-left: 7%;
+		display: inline-block;
+		width: 1200px;
+		height: 300px;
+		-webkit-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+		-moz-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+		box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+	}
+	.cabin {
+		margin-top: 1%;
+		border-radius: 5px;
+		margin-left: 7%;
+		display: inline-block;
+		width: 1200px;
+		height: 300px;
+		-webkit-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+		-moz-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+		box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+	}
+	#the_wrap {
+		margin-top: 1%;
+		margin-bottom: 1%;
+		border-radius: 5px;
+		background-color: #74AFAD;
+		background-opacity: 0.3;
+		display: inline-block;
+		width: 1200px;
+		min-height: 400px;
+		vertical-align: center;
+		margin-left: 100px;
+		-webkit-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+		-moz-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+		box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+
+}

@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" type="text/css" href="/assets/styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
 	<meta charset="utf-8">
 	<title>Vacation Dashboard</title>
 </head>
 <body>
-	<div id="holder">
+	<div class="holder">
+		<head class="head">
+			<img class="beach" src="/assets/img/beach2.jpg" alt="A Beach" >
+		</head>
 		<div id="the_wrap">
 			<a href="/Trips/logout_user"><p>Logout</p></a>
 			<h1>Hello, <?= $user['name'] ?>!</h1>
@@ -63,6 +67,9 @@
 			</div>
 			<a href="/add_travelp">Add Travel Plan</a>
 		</div>
+		<footer class="foot">
+			<img class="cabin" src="/assets/img/cabin.jpg" alt="A cabin">
+		</footer>
 	</div>
 </body>
 </html>
