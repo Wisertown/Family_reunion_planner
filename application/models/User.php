@@ -67,6 +67,32 @@ class User extends CI_Model {
 		$query = "SELECT users.id, users.name, users.username, users.password, users.created_at, users.updated_at, users.votes, users.switch, users.admin_id, admin.username as admin from users join admin on users.admin_id = admin.id;";
 		return $this->db->query($query)->result_array();
 	}
+	public function delete($post){
+		$query = "DELETE from users where users.id = ?";
+		$values = array($post);
+		return $this->db->query($query, $values);
+	}
+	public function get_user_info($id){
+		$query = "SELECT * from users where users.id =?";
+		$values = array($id);
+		return $this->db->query($query, $values)->row_array();
+	}
+	public function user_update($post)
+	{
+		$this->form_validation->set_rules("name", "Name", "trim|required");
+		$this->form_validation->set_rules("username", "username", "trim|required|alpha");
+		$this->form_validation->set_rules("password", "Password", "trim|required|min_length[6]");
+		$this->form_validation->set_rules("votes", "votes", "trim|required|numeric");
+		$this->form_validation->set_rules("switch", "switch", "trim|required|numeric");
+		if($this->form_validation->run() === FALSE)
+		{
+			$this->session->set_flashdata('errors', validation_errors());
+		} else {
+			$query = "UPDATE users set name = ?, username = ?, password = ?, updated_at = NOW(), votes = ?, switch = ? where users.id = ?";
+			$values = array($post['name'], $post['username'], $post['password'], $post['votes'], $post['switch'], $post['id']);
+			return $this->db->query($query, $values);
+		}
+	}
 }
 
 

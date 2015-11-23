@@ -13,5 +13,8 @@ $route['join/(:any)'] = "Trips/join/$1";
 $route['adminlogin'] = "Users/adminlogin";
 $route['admindash'] = "Users/show_ad";
 $route['Users/admin'] = "Users/admin";
-
+$route['Users/delete/(:any)'] = "Users/delete/$1";
+$route['edit/(:any)'] = "Users/edit/$1";
+$route['user_update/(:any)'] = "Users/user_update/$1";
 $route['translate_uri_dashes'] = FALSE;
+?>

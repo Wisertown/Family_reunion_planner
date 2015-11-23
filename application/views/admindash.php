@@ -57,10 +57,11 @@
 				<td><?= $user_e['votes'] ?></td>
 				<td><?= $user_e['switch'] ?></td>
 				<td><?= $user_e['admin'] ?></td>
-				<td><a href="/edit/<?= $user_e['id'] ?>">Edit this person</a></td>
-				<td>
-					<form action="/delete/<?= $user_e['id'] ?>" method="post">
-						<input type="submit" class="button" value="DELETE">
+				<td><a href="edit/<?= $user_e['id'] ?>">Edit this person</a></td>
+				<td> 
+					<form action="Users/delete/<?= $user_e['id'] ?>" method="Post">
+						<input type="hidden" name="id" value="<?= $user_e['id'] ?>">
+						<input onclick="return confirm('Are you sure?')" type="submit" value="DELETE">
 					</form>
 				</td>
 			</tr>

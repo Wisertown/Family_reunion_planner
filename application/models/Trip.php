@@ -31,7 +31,7 @@ class Trip extends CI_Model {
 	}
 	public function get_my_trips()
 	{
-		$query = "SELECT users.id, users.name, vacation.trip_id as va_id, vacation.id, vacation.place, vacation.d_from, vacation.d_to, vacation.description from users join vacation on users.id = vacation.user_id where added_by = ?"; 
+		$query = "SELECT users.id, users.name, vacation.trip_id as va_id, vacation.id, vacation.place, vacation.d_from, vacation.d_to, vacation.description from users join vacation on users.id = vacation.user_id where vacation.user_id = ?"; 
 		$values = $this->session->userdata('id');
 		return $this->db->query($query, $values)->result_array();
 	}
