@@ -4,9 +4,8 @@ class Trip extends CI_Model {
 
 	public function get_user_info()
 	{
-		$query = "SELECT name FROM users WHERE id = ?";
+		$query = "SELECT users.name, users.votes FROM users WHERE id = ?";
 		$values = $this->session->userdata('id');
-		$user = $this->db->query($query, $values)->row_array();
 		return $this->db->query($query, $values)->row_array();
 	}
 	public function create($post)
@@ -29,18 +28,18 @@ class Trip extends CI_Model {
 			return TRUE;
 		}
 	}
-	public function get_my_trips()
-	{
-		$query = "SELECT users.id, users.name, vacation.trip_id as va_id, vacation.id, vacation.place, vacation.d_from, vacation.d_to, vacation.description from users join vacation on users.id = vacation.user_id where vacation.user_id = ?"; 
-		$values = $this->session->userdata('id');
-		return $this->db->query($query, $values)->result_array();
-	}
-	public function get_others_trips()
-	{
-		$query = "SELECT users.id, users.name, vacation.id as va_id, vacation.trip_id as tr_id, vacation.place, vacation.d_from, vacation.d_to, vacation.description from users join vacation on users.id = vacation.user_id where users.id != ? group by vacation.trip_id"; 
-		$values = $this->session->userdata('id');
-		return $this->db->query($query, $values)->result_array();
-	}
+	// public function get_my_trips()
+	// {
+	// 	$query = "SELECT users.id, users.name, vacation.trip_id as va_id, vacation.id, vacation.place, vacation.d_from, vacation.d_to, vacation.description from users join vacation on users.id = vacation.user_id where vacation.user_id = ?"; 
+	// 	$values = $this->session->userdata('id');
+	// 	return $this->db->query($query, $values)->result_array();
+	// }
+	// public function get_others_trips()
+	// {
+	// 	$query = "SELECT users.id, users.name, vacation.id as va_id, vacation.trip_id as tr_id, vacation.place, vacation.d_from, vacation.d_to, vacation.description from users join vacation on users.id = vacation.user_id where users.id != ? group by vacation.trip_id"; 
+	// 	$values = $this->session->userdata('id');
+	// 	return $this->db->query($query, $values)->result_array();
+	// }
 	public function get_trip_users($id)
 	{
 		$query = "SELECT users.name, users.id, vacation.place, vacation.trip_id, vacation.added_by from users join vacation on users.id = vacation.added_by where vacation.trip_id = ?";
