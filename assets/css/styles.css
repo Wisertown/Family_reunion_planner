@@ -84,7 +84,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 		
 	}
 		.in {
-			width: 110px;
+			width: 125px;
 			height: 25px;
 		
 		}
@@ -206,7 +206,6 @@ td, th {
 		border-radius: 5px;
 		background-color: #74AFAD;
 		background-opacity: 0.3;
-		display: inline-block;
 		width: 1200px;
 		min-height: 400px;
 		vertical-align: center;
@@ -216,9 +215,7 @@ td, th {
 		box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
 
 	}
-	#text_hold {
-		padding: 10px 10px 10px 20px;
-	}
+
 		.t_bl {
 			font-weight: bold;
 			background-color:#FDF3E7;
@@ -229,6 +226,31 @@ td, th {
 		    -moz-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
 		    box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
 		}
-		.add_travel {
-			
+
+	.h1 {
+		margin-left: 25px;
+	}
+	#create_trip {
+		margin-left: 25px;
+	}
+	#cont {
+		margin-left: 25px;
+		width: 1200px;
+		height: 600px;
+	}
+		.g1 {
+			display: inline-block;
+			vertical-align: top;
+			margin-left: 25px;
+			max-width: 300px;
+			min-height: 100px;
 		}
+		.g2 {
+			vertical-align: top;
+			display: inline-block;
+			margin-left: 5px;
+			width: 300px;
+			min-height: 100px;
+		}
+
+

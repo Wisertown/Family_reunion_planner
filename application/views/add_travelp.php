@@ -10,28 +10,39 @@
 	<a href="/dashboard"><p>Dashboard</p></a>
 	<a href="/Trips/logout_user"><p>Logout</p></a>
 	<div id="the_wrap">
-		<div id="text_hold">
-			<h1>Create Your New Travel Plan!</h1>
-			<div>
-				<form action="/Trips/create" method="post">
-					Destination: <input type="text" name="place">
-					<br>
-					<br>
-					Description: <input type="text" name="description">
-					<br>
-					<input type="hidden" name="created_by" value="<?= $this->session->userdata('id') ?>">
-					<br>
-					Travel Date From: <input type="date" name="d_from">
-					<br>
-					<p><i>Date from <strong>MUST</strong> be before Date to</i></p>
-					Travel Date To: <input type="date" name="d_to">
-					<br>
-					<input type="submit" value="Add">
-				</form>
-			</div>
-			<div id="errors">
-				<?= $this->session->flashdata("errors"); ?>
-			</div>
+		<h1 class="h1">Create Your Reunion Location</h1>
+			<form action="/Trips/create" method="post" id="create_trip">
+				<div id="cont">
+					<div id="g1">
+						Destination:<br>
+						<input type="text" name="place" class="in">
+						<br>
+						<br>
+						Description: <br>
+						<textarea name="description" id="" cols="30" rows="10"></textarea>
+						<br>
+						<br>
+					</div>
+					<div id="g2">
+						Link: <br>
+						<input type="text" name="link" class="in">
+						<br>
+						<input type="hidden" name="created_by" value="<?= $this->session->userdata('id') ?>">
+						<br>
+						Travel Date From:<br>
+						<input type="date" name="d_from" class="in">
+						<br>
+						<p><i>Date from <strong>MUST</strong> be before Date to</i></p>
+						Travel Date To:<br>
+						<input type="date" name="d_to" class="in">
+						<br>
+						<br>
+					</div>
+					<input type="submit" value="Add" class="btn">
+				</div>
+			</form>
+		<div id="errors">
+			<?= $this->session->flashdata("errors"); ?>
 		</div>
 	</div>
 </body>

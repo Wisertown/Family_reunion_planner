@@ -28,7 +28,6 @@
 								<th>Total Votes</th>
 								<th>Travel Start Date</th>
 								<th>Travel End Date</th>
-								<th>Plan</th>
 								<th>Vote For it!</th>
 							</tr>
 			        	</table>
