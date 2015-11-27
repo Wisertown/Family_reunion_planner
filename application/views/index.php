@@ -35,14 +35,14 @@
 				<div id="email">
 					<h3>Don't have a username or Password?</h3>
 					<h4>Please email Uncle Bob</h4>
-					<form method="post">
+					<form actionmethod="post">
 						From: <input class="in" type="from" type="email"/><br />
-  					<input class="in" name="address" type="hidden" value="aaron.wise253@gmail.com"/><br />
-  					Subject: <input class="in" name="subject" type="text" /><br />
-  					<br>
-  					Message:<br />
-  					<textarea name="comment" rows="5" cols="40"></textarea><br />
-  					<input class="btn" type="submit" value="Submit" />
+	  					<input class="in" name="address" type="hidden" value="aaron.wise253@gmail.com"/><br />
+	  					Subject: <input class="in" name="subject" type="text" /><br />
+	  					<br>
+	  					Message:<br />
+	  					<textarea name="comment" rows="5" cols="40"></textarea><br />
+	  					<input class="btn" type="submit" value="Submit" />
   					</form>
 				</div>
 			</div>

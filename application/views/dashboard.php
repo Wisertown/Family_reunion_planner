@@ -35,9 +35,15 @@
 				</div>
 				<br>
 				<br>
+			<?php if($user['switch'] == 0){?>
 				<div class="add_travel">	
-					<h3><a href="/add_travelp">Add a Destination</a></h3>
+					<?php echo('<h3><a href="/add_travelp">Add a Destination</a></h3>'); ?>
 				</div>
+			<?php } else { ?>
+				<div>
+					<?php echo("<h3>You can only submit one location</h3>"); ?>
+				</div>
+			<?php } ?>
 			</div>
 		</div>
 		<footer class="foot">
