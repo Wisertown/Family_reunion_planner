@@ -10,6 +10,7 @@ class Trip extends CI_Model {
 	}
 	public function create($post)
 	{
+		$this->form_validation->set_rules("Link", "link", "trim|required");
 		$this->form_validation->set_rules("place", "destination", "trim|required");
 		$this->form_validation->set_rules("description", "description", "trim|required");
 		$this->form_validation->set_rules("d_from", "date from", "trim|required");
@@ -18,13 +19,17 @@ class Trip extends CI_Model {
 			$this->session->set_flashdata("errors", validation_errors());
 			return FALSE;
 		} else {
-			$query2 = "INSERT INTO trips(place, description, d_from, d_to, created_by, created_at, updated_at) values(?, ?, ?, ?, ?, NOW(), NOW())";
+			$query2 = "INSERT INTO trips(place, description, link, d_from, d_to, created_by, created_at, updated_at) values(?, ?, ?, ?, ?, NOW(), NOW())";
 			$values = array($post['place'], $post['description'], $post['d_from'], $post['d_to'], $this->session->userdata('id'));
 			$this->db->query($query2, $values);
 
 			$query = "INSERT INTO vacation(user_id, trip_id, place, description, d_from, d_to, added_by, created_at, updated_at) values(?, last_insert_id(), ?, ?, ?, ?, ?, NOW(), NOW())";
 			$values = array($this->session->userdata('id'), $post['place'], $post['description'], $post['d_from'], $post['d_to'], $this->session->userdata('id'));
 			$this->db->query($query, $values);
+
+			$query33 ="UPDATE users set votes = votes-1, switch = switch+1 where users.id = ?";
+			$values = array($this->session->userdata('id'));
+			$this->db->query($query33, $values);
 			return TRUE;
 		}
 	}

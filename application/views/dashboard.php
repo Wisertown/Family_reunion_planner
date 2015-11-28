@@ -15,7 +15,11 @@
 			<div id="text_hold">
 				<a href="/Trips/logout_user"><p>Logout</p></a>
 				<h1>Hello, <?= $user['name'] ?>!</h1>
-				<h2>You have <strong><?= $user['votes'] ?></strong> Votes</h2>
+				<?php if($user['votes'] > 0){ ?>
+					<h2>You have <strong><?= $user["votes"] ?></strong> Votes</h2>
+				<?php } else { 
+					echo("<h2>You have no more votes!</h2>");
+				} ?>
 				<div id="your_vacation">
 					<h3>Vote for your favorite place!</h3>
 					<p>The place with the most votes will be the site of the 2016 Smith family Reunion!</p>
