@@ -34,6 +34,24 @@
 								<th>Travel End Date</th>
 								<th>Vote For it!</th>
 							</tr>
+						<?php foreach($my_trips as $my_trip){?>
+							<tr>
+								<td><?= $my_trip['place'] ?></td>
+								<td><?= $my_trip['description'] ?></td>
+								<td> <a href="<?= $my_trip['link'] ?>"><?= $my_trip['link'] ?></a></td>
+								<td><?= $my_trip['votes'] ?></td>
+								<td><?= $my_trip['d_from'] ?></td>
+								<td><?= $my_trip['d_to'] ?></td>
+								<?php if($user['votes'] > 0){ ?>
+									<td><form action="Trips/vote/<?= $my_trip['va_id']?>" method="post">
+										<input type="hidden" value="<?= $my_trip['va_id']?>">
+										<input type="submit" value="Vote!" class="vote">
+									</form></td>
+								<?php }else{ 
+										echo('<p>No more Votes!</p>');
+									} ?>
+							</tr>
+							<?php } ?>
 			        	</table>
 			        </div>
 				</div>

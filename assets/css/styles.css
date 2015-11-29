@@ -319,4 +319,30 @@ td, th {
         margin-bottom: 15px;
         }
 
+        .vote {
+		background: #ccdae3;
+        background-image: -webkit-linear-gradient(top, #ccdae3, #2c3c45);
+        background-image: -moz-linear-gradient(top, #ccdae3, #2c3c45);
+        background-image: -ms-linear-gradient(top, #ccdae3, #2c3c45);
+        background-image: -o-linear-gradient(top, #ccdae3, #2c3c45);
+        background-image: linear-gradient(to bottom, #ccdae3, #2c3c45);
+        -webkit-border-radius: 6;
+        -moz-border-radius: 6;
+        border-radius: 6px;
+        font-family: Georgia;
+        color: #06210d;
+        font-size: 16px;
+        padding: 4px 10px 6px 8px;
+        text-decoration: none;
+        }
+        .vote:hover {
+  		background: #999999;
+        background-image: -webkit-linear-gradient(top, #999999, #3498db);
+        background-image: -moz-linear-gradient(top, #999999, #3498db);
+        background-image: -ms-linear-gradient(top, #999999, #3498db);
+        background-image: -o-linear-gradient(top, #999999, #3498db);
+        background-image: linear-gradient(to bottom, #999999, #3498db);
+        text-decoration: none;
+        }
+
 
