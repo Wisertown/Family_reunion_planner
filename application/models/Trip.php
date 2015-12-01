@@ -4,7 +4,7 @@ class Trip extends CI_Model {
 
 	public function get_user_info()
 	{
-		$query = "SELECT users.name, users.switch, users.votes FROM users WHERE id = ?";
+		$query = "SELECT users.name, users.switch, users.pswitch, users.votes FROM users WHERE id = ?";
 		$values = $this->session->userdata('id');
 		return $this->db->query($query, $values)->row_array();
 	}
