@@ -13,15 +13,20 @@
 		</head>
 		<div id="the_wrap">
 			<div id="text_hold">
-				<a href="/Trips/logout_user"><p>Logout</p></a>
+				<div id="discuss">
+					<a class="logout" href="/Trips/logout_user"><button class="logout_btn" type="button">Logout</button></a>
+				
+					<a class="forum" href="/Forums/show"><button class="forum_btn" type="button">Discuss!</button></a>
+						
+				</div>
 				<h1>Hello, <?= $user['name'] ?>!</h1>
 				<?php if($user['votes'] > 0){ ?>
 					<h2>You have <strong><?= $user["votes"] ?></strong> Votes</h2>
-				<?php } else { 
-					echo("<h2>You have no more votes!</h2>");
-				} ?>
-				<div id="your_vacation">
 					<h3>Vote for your favorite place!</h3>
+				<?php } else { ?>
+					<h2>You have no more votes!</h2>
+				<?php } ?>
+				<div id="your_vacation">
 					<p>The place with the most votes will be the site of the 2016 Smith family Reunion!</p>
 					<div>
 						<table class="t_bl">
@@ -38,7 +43,7 @@
 							<tr>
 								<td><?= $my_trip['place'] ?></td>
 								<td><?= $my_trip['description'] ?></td>
-								<td> <a href="<?= $my_trip['link'] ?>"><?= $my_trip['link'] ?></a></td>
+								<td><a href="#" onClick="window.open('<?= $my_trip['link'] ?>', '_blank')"><?= $my_trip['link'] ?></a></td>
 								<td><?= $my_trip['votes'] ?></td>
 								<td><?= $my_trip['d_from'] ?></td>
 								<td><?= $my_trip['d_to'] ?></td>
@@ -47,9 +52,9 @@
 										<input type="hidden" value="<?= $my_trip['va_id']?>">
 										<input type="submit" value="Vote!" class="vote">
 									</form></td>
-								<?php }else{ 
-										echo('<p>No more Votes!</p>');
-									} ?>
+								<?php }else{ ?>
+										<td><p>No more Votes!</p></td>
+								<?php } ?>
 							</tr>
 							<?php } ?>
 			        	</table>

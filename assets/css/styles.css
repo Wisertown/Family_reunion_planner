@@ -169,8 +169,8 @@ td, th {
 }
 
 .holder {
-	width: 100%;
-	min-height: 1200px;
+	width: 1400px;
+	min-height: 1400px;
  	background-color:#FDF3E7;
  	background-opacity: 0.5;
 
@@ -330,7 +330,7 @@ td, th {
         -moz-border-radius: 6;
         border-radius: 6px;
         font-family: Georgia;
-        color: #06210d;
+        color: white;
         font-size: 16px;
         padding: 4px 10px 6px 8px;
         text-decoration: none;
@@ -344,5 +344,103 @@ td, th {
         background-image: linear-gradient(to bottom, #999999, #3498db);
         text-decoration: none;
         }
+
+#discuss {
+	display: inline-block;
+
+}	
+	.forum {
+		display: inline-block;
+		margin-left: 25px;
+	}
+	.logout {
+		display: inline-block;
+
+	}
+	.logout_btn {
+		background: #ccdae3;
+        background-image: -webkit-linear-gradient(top, #ccdae3, #2c3c45);
+        background-image: -moz-linear-gradient(top, #ccdae3, #2c3c45);
+        background-image: -ms-linear-gradient(top, #ccdae3, #2c3c45);
+        background-image: -o-linear-gradient(top, #ccdae3, #2c3c45);
+        background-image: linear-gradient(to bottom, #ccdae3, #2c3c45);
+        -webkit-border-radius: 6;
+        -moz-border-radius: 6;
+        border-radius: 6px;
+        font-family: Georgia;
+        color: white;
+        font-size: 16px;
+        padding: 4px 10px 6px 8px;
+        text-decoration: none;
+    }
+    .logout_btn:hover {
+  		background: #999999;
+        background-image: -webkit-linear-gradient(top, #999999, #3498db);
+        background-image: -moz-linear-gradient(top, #999999, #3498db);
+        background-image: -ms-linear-gradient(top, #999999, #3498db);
+        background-image: -o-linear-gradient(top, #999999, #3498db);
+        background-image: linear-gradient(to bottom, #999999, #3498db);
+        text-decoration: none;
+        }
+
+    .forum_btn {
+     	background: #ccdae3;
+        background-image: -webkit-linear-gradient(top, #ccdae3, #2c3c45);
+        background-image: -moz-linear-gradient(top, #ccdae3, #2c3c45);
+        background-image: -ms-linear-gradient(top, #ccdae3, #2c3c45);
+        background-image: -o-linear-gradient(top, #ccdae3, #2c3c45);
+        background-image: linear-gradient(to bottom, #ccdae3, #2c3c45);
+        -webkit-border-radius: 6;
+        -moz-border-radius: 6;
+        border-radius: 6px;
+        font-family: Georgia;
+        color: white;
+        font-size: 16px;
+        padding: 4px 10px 6px 8px;
+        text-decoration: none;
+     }
+
+    .forum_btn:hover {
+  		background: #999999;
+        background-image: -webkit-linear-gradient(top, #999999, #3498db);
+        background-image: -moz-linear-gradient(top, #999999, #3498db);
+        background-image: -ms-linear-gradient(top, #999999, #3498db);
+        background-image: -o-linear-gradient(top, #999999, #3498db);
+        background-image: linear-gradient(to bottom, #999999, #3498db);
+        text-decoration: none;
+        }
+#the_wrap3 {
+		margin-top: 4%;
+		margin-bottom: 1%;
+		border-radius: 5px;
+		background-color: #74AFAD;
+		background-opacity: 0.3;
+		width: 400px;
+		min-height: 300px;
+		margin-left:32%;
+		vertical-align: middle;
+		-webkit-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+		-moz-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+		box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+}
+	#createpost {
+		padding: 5px 5px 5px 15px;
+	}
+
+#the_wrap2 {
+		
+		margin-top: 4%;
+		margin-bottom: 1%;
+		border-radius: 5px;
+		background-color: #74AFAD;
+		background-opacity: 0.3;
+		width: 90%;
+		min-height: 400px;
+		margin-left: 50px;
+		-webkit-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+		-moz-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+		box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+
+	}
 
 
