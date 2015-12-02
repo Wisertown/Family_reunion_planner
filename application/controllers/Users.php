@@ -47,7 +47,8 @@ class Users extends CI_Controller {
 		}
 
 	}
-	public function edit($id){
+	public function edit($id)
+	{
 		$edit = $this->User->get_user_info($id);
 		$this->load->view('/edituser', array("edit"=>$edit));
 	}

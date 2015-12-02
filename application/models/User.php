@@ -64,7 +64,7 @@ class User extends CI_Model {
 		}
 	}
 	public function get_users_ad(){
-		$query = "SELECT users.id, users.name, users.username, users.password, users.created_at, users.updated_at, users.votes, users.switch, users.admin_id, admin.username as admin from users join admin on users.admin_id = admin.id;";
+		$query = "SELECT users.id, users.name, users.username, users.password, users.created_at, users.updated_at, users.votes, users.switch, users.pswitch, users.admin_id, admin.username as admin from users join admin on users.admin_id = admin.id;";
 		return $this->db->query($query)->result_array();
 	}
 	public function delete($post){

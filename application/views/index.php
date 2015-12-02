@@ -46,7 +46,6 @@
   					</form>
 				</div>
 			</div>
-		
 	</div>
 	<a href="Users/admin"><p>admin</p></a>
 </body>

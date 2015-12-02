@@ -13,11 +13,9 @@
 		</head>
 		<div id="the_wrap">
 			<div id="text_hold">
-				<div id="discuss">
+				<div id="cash">
 					<a class="logout" href="/Trips/logout_user"><button class="logout_btn" type="button">Logout</button></a>
-				
 					<a class="forum" href="/Forums/show"><button class="forum_btn" type="button">Discuss!</button></a>
-						
 				</div>
 				<h1>Hello, <?= $user['name'] ?>!</h1>
 				<?php if($user['votes'] > 0){ ?>

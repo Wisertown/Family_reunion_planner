@@ -7,37 +7,66 @@
 	<title>Discussion Page</title>
 </head>
 <body class="holder">
-	<div id="discuss">
-		<a class="logout" href="/Trips/logout_user"><button class="logout_btn" type="button">Logout</button></a>
-		<a class="forum" href="/dashboard"><button class="forum_btn" type="button">Return to Dashboard</button></a>
-	</div>
 	<head class="head">
 		<img class="beach" src="/assets/img/buckingham.jpg" alt="A palace">
 	</head>
-	<div id="the_wrap3">
-		<div id="createpost">
-			<h1 class="">Create A Post</h1>
-			<form action="/Forums/post_create" method="post">
-				<p>Subject:</p><input type="text" name="subject">
-				<p>Post:</p><textarea name="post_data" id="" cols="30" rows="4"></textarea>
-				<br>
-				<input type="submit" class="btn" name="Post">
-				<?php if($this->session->flashdata() !== null){ ?>
-				
-					<div id="g4_errors">
-						<?= $this->session->flashdata("errors"); ?>
-					</div>
-				<?php } else { ?>
+	<div id="mid_hold">
+		<div id="discuss">
+			<a class="discuss_logout" href="/Trips/logout_user"><button class="logout_btn" type="button">Logout</button></a>
+			<a class="discuss_forum" href="/dashboard"><button class="forum_btn" type="button">Return to Dashboard</button></a>
+			<?php if($user['switch'] == 0){?>
+				<a class="discuss_travel" href="/add_travelp"><button class="forum_btn" type="button">Add Travel Plan</button></a>
+			<?php } else { ?>
+				<div>
+					<p>Not Allowed</p>
+				</div>
+		    <?php } ?>
+			<a class="discuss_comms" href="/your_post_comms"><button class="forum_btn">Your Posts</button></a>
+			<a class="discuss_help" href="/help"><button class="forum_btn">Need Help?</button></a>
+		</div>
+		<div id="the_wrap3">
+				<div id="createpost">
+				<h1>Create A Post</h1>
+					<form action="/Forums/post_create" method="post">
+					<p>Subject:</p><input type="text" name="subject">
+					<p>Post:</p><textarea name="post_data" id="" cols="30" rows="4"></textarea>
+					<br>
+					<input type="submit" class="btn" name="Post">
+					<?php if($this->session->flashdata() !== null){ ?>
+						<div id="g4_errors">
+							<?= $this->session->flashdata("errors"); ?>
+						</div>
+					<?php } else { ?>
 
-				<?php } ?>
-			</form>
+					<?php } ?>
+				</form>
+			</div>
 		</div>
 	</div>
-	<div id="the_wrap2">
-		<div>
-			
-		<h1>Top posts</h1>
+	<div id="the_wrap4">
+		<div class="head">
+			<h1>Hello <?= $user['name'] ?></h1>
+			<h1>Here are the Top Posts:</h1>
 		</div>
+			<?php foreach($posts as $pos){?>
+			<br>
+		<div class="posts_comms">
+				<h3 class="head_post"><b>By: </b> <?= $pos['name'] ?></h3>
+				<h3 class="head_post2"><b>Subject: </b> <?= $pos['subject'] ?></h3>
+				
+				<h4><i><?= $pos['post_data'] ?></i></h4>
+				<div class="likes_comms">
+					<a class="head_post" href="/who_likes/<?= $pos['po_id'] ?>"><p><?= $pos['likes_'] ?> likes</p></a>
+					<a class="head_post2" href="/comments/<?= $pos['po_id'] ?>"><p>Comments</p></a>
+					<form class="head_post3" action="/comment_create/<?= $pos['po_id'] ?>" method="post">
+						Comment:<input class="comment" type="text" name="comment_data">
+						<input class="comment_submit" type="submit" value="submit">
+					</form>
+				</div>
+			<br>
+		</div>
+			<?php } ?>
+		<br>
 	</div>
 	<footer>
 		<img class="cabin" src="/assets/img/disneyl.jpg" alt="Disney Land">
