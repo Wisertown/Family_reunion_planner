@@ -22,8 +22,10 @@ class Forum extends CI_Model {
 	}
 	public function get_all_posts()
 	{
-		$query = "SELECT users.id, users.name, posts.id as po_id, posts.subject, posts.post_data, posts.created_at, posts.likes_, posts.user_id from users join posts on users.id = posts.user_id ORDER BY posts.likes_ desc;";
+		$query = "SELECT users.id, users.name, posts.id as po_id, posts.subject, posts.likes_ as p_likes, posts.post_data, posts.created_at, posts.user_id, posts.c_ccount as c_count from posts join users on users.id = posts.user_id order by posts.likes_ desc";
+		// $query2 = "SELECT posts.id as po_id, posts.subject, sum(comments.id) as total_comms from posts join comments on posts.id = comments.post_id;";
 		return $this->db->query($query)->result_array();
+		
 	}
 	public function get_user_info()
 	{
@@ -41,6 +43,10 @@ class Forum extends CI_Model {
 		$query = "INSERT into comments(comment_data, post_id, user_id, created_at, updated_at) values (?, ?, ?, NOW(), NOW())";
 		$values = array($post['comment_data'], $id, $this->session->userdata('id'));
 		$this->db->query($query, $values);
+
+		$query2 ="UPDATE posts set c_ccount = c_ccount +1 where posts.id =?";
+		$values = array($id);
+		$this->db->query($query2, $values);
 		return TRUE;
 		}
 	}

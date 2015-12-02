@@ -26,6 +26,5 @@ class Forums extends CI_Controller {
 			redirect('/discuss');
 		}
 	}
-
 }
 ?>

@@ -22,7 +22,6 @@ class Trips extends CI_Controller {
 			redirect('/add_travelp');
 		}
 	}
-	
 	public function logout_user() {
 		$this->session->sess_destroy();
 		redirect('/');
