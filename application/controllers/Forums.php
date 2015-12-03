@@ -26,5 +26,10 @@ class Forums extends CI_Controller {
 			redirect('/discuss');
 		}
 	}
+	public function like($id)
+	{
+		$this->Forum->like($id);
+		return redirect('/discuss');
+	}
 }
 ?>

@@ -14,7 +14,7 @@ class Forum extends CI_Model {
 		$values = array($this->session->userdata('id'), $post['subject'], $post['post_data']);
 		$this->db->query($query, $values);
 
-		$query2 = "UPDATE users set pswitch = pswitch +1 where users.id = ?";
+		$query2 = "UPDATE users set users.pswitch = users.pswitch +1 where users.id = ?";
 		$values = array($this->session->userdata('id'));
 		$this->db->query($query2, $values);
 		return TRUE;
@@ -54,5 +54,15 @@ class Forum extends CI_Model {
 	{
 
 	}
+	public function like($id){
+		$query = "UPDATE posts set posts.likes_ = posts.likes_ +1 WHERE posts.id = ?";
+		$values = array($id);
+		$this->db->query($query, $values);
+
+		$query2 = "UPDATE users set users.pswitch = users.pswitch +1 where users.id = ?;";
+		$values = array($this->session->userdata('id'));
+		$this->db->query($query2, $values);
+		return TRUE;
+	} 
 }
 ?>

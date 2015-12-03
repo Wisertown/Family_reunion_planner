@@ -18,6 +18,6 @@ $route['edit/(:any)'] = "Users/edit/$1";
 $route['user_update/(:any)'] = "Users/user_update/$1";
 $route['discuss'] = "Forums/show";
 $route['comment_create/(:any)'] = "Forums/comment_create/$1";
-$route['/who_likes/(:any)'] = "Forums/like/$1";
+$route['who_likes/(:any)'] = "Forums/like/$1";
 $route['translate_uri_dashes'] = FALSE;
 ?>
