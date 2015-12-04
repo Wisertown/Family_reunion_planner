@@ -29,7 +29,11 @@
 					<p>Subject:</p><input type="text" name="subject">
 					<p>Post:</p><textarea name="post_data" id="" cols="30" rows="4"></textarea>
 					<br>
+					<?php if($user['pswitch'] == 2){?>
+						<p>You can only submit 2 posts</p>
+					<?php }else {?>
 					<input type="submit" class="btn" name="Post">
+					<?php } ?>
 					<?php if($this->session->flashdata() !== null){ ?>
 						<div id="g4_errors">
 							<?= $this->session->flashdata("errors"); ?>
@@ -46,6 +50,18 @@
 			<h1>Hello <?= $user['name'] ?></h1>
 			<h1>Here are the Top Posts:</h1>
 		</div>
+
+		 	<?php	//iterates through $user_likes to pull out array of arrays
+		 			// and convert from string to Integer.
+		 			// this way data is easier to manage.
+		 		$p = 0;
+		 		$j = 0;
+		 		$value = [];
+		  		for($i = 0; $i < count($user_likes); $i++){
+		 		(array_push($value, intval($user_likes[$i]['post_id'])));
+		 	}?>
+		 
+
 			<?php foreach($posts as $pos){?>
 				<br>
 				<div class="posts_comms">
@@ -55,20 +71,28 @@
 					<h4><i><?= $pos['post_data'] ?></i></h4>
 					<div class="likes_comms">
 					
-					<?php if($user_likes){ 
-							for($x = 0; $x < count($user_likes); $x++){
-								if($pos['po_id'] === $user_likes[$x]['post_id']){?>
-									<p class="head_post"><i>Liked!</i></p>
-									<?php break; ?>
-							<?php }else{ ?>
-									<a class="head_post" href="/who_likes/<?= $pos['po_id'] ?>"><p><?= $pos['p_likes'] ?> likes</p></a>
-									<?php break; ?>
-							<?php } ?>
-						<?php } ?>
-					<?php } else { ?>
+					<?php 
+					//my "if I havent liked anthing" conditional
+					if(empty($value)){ ?> 
 						<a class="head_post" href="/who_likes/<?= $pos['po_id'] ?>"><p><?= $pos['p_likes'] ?> likes</p></a>
-					<?php } ?>
-						<a class="head_post2" href="Forums/comments/<?= $pos['po_id'] ?>"><p><?= $pos['c_count'] ?> Comments</p></a>
+					 <?php } else { ?>
+							<?php $p = 0; $j = 0; ?>
+					<!-- I declare variables to add to checks and if statements -->
+					<!-- for loop to check each post to see it has been liked -->
+						<?php for($x = 0; $x < count($value); $x++){
+								if($pos['po_id'] == $value[$x]){?>
+								<!-- if it has been liked I post LIKED! -->
+								  <p class='head_post'><i>Liked!</i></p>
+								  <?php $j++; break; }
+								  else
+								  {	$p++; continue; } ?>
+							<?php } ?>
+
+						<?php } ?>
+					<?php if($p > 0 && $j == 0){ ?>
+						<a class="head_post" href="/who_likes/<?= $pos["po_id"] ?>"><p><?= $pos["p_likes"]?> likes</p></a>
+					<?php }?>
+			 			<a class="head_post2" href="Forums/comments/<?= $pos['po_id'] ?>"><p><?= $pos['c_count'] ?> Comments</p></a>
 						<form class="head_post3" action="/comment_create/<?= $pos['po_id'] ?>" method="post">
 							Comment:<input class="comment" type="text" name="comment_data">
 							<input class="comment_submit" type="submit" value="submit">
