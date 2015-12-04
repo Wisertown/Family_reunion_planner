@@ -82,17 +82,18 @@
 						<?php for($x = 0; $x < count($value); $x++){
 								if($pos['po_id'] == $value[$x]){?>
 								<!-- if it has been liked I post LIKED! -->
-								  <p class='head_post'><i>Liked!</i></p>
+								  <p class='head_post'><b><?= $pos["p_likes"]?></b><i>Likes!</i></p>
 								  <?php $j++; break; }
 								  else
 								  {	$p++; continue; } ?>
 							<?php } ?>
 
 						<?php } ?>
+						<!-- conditional so that I can get a clickable link -->
 					<?php if($p > 0 && $j == 0){ ?>
 						<a class="head_post" href="/who_likes/<?= $pos["po_id"] ?>"><p><?= $pos["p_likes"]?> likes</p></a>
 					<?php }?>
-			 			<a class="head_post2" href="Forums/comments/<?= $pos['po_id'] ?>"><p><?= $pos['c_count'] ?> Comments</p></a>
+			 			<a class="head_post2" href="/comments/<?= $pos['po_id'] ?>"><p><?= $pos['c_count'] ?> Comments</p></a>
 						<form class="head_post3" action="/comment_create/<?= $pos['po_id'] ?>" method="post">
 							Comment:<input class="comment" type="text" name="comment_data">
 							<input class="comment_submit" type="submit" value="submit">

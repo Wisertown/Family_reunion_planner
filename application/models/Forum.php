@@ -50,9 +50,9 @@ class Forum extends CI_Model {
 		return TRUE;
 		}
 	}
-	public function get_total_comms_likes()
+	public function show_comms($id)
 	{
-
+		$query = "SELECT "
 	}
 	public function like($id){
 		$query = "INSERT into likes (post_id, user_id, like_, created_at, updated_at) values (?, ?, 1, NOW(), NOW())";

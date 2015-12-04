@@ -32,6 +32,12 @@ class Forums extends CI_Controller {
 		$this->Forum->like($id);
 		return redirect('/discuss');
 	}
+	public function show_comms($id)
+	{
+		$all_likes = $this->Forum->get_likes($id);
+		$comms = $this->Forum->show_comms($id);
+		$this->load->view('/comments');
+	}
 
 }
 ?>
