@@ -5,10 +5,11 @@ class Forums extends CI_Controller {
 
 	public function show()
 	{	
+		$user_likes = $this->Forum->get_user_likes();
 		$comms = $this->Forum->get_total_comms_likes();
 		$user = $this->Forum->get_user_info();
 		$posts = $this->Forum->get_all_posts();
-		$this->load->view('/discuss', array("user"=>$user, "posts"=>$posts));
+		$this->load->view('/discuss', array("user"=>$user, "posts"=>$posts, "user_likes"=>$user_likes));
 	}
 	public function post_create()
 	{
@@ -31,5 +32,6 @@ class Forums extends CI_Controller {
 		$this->Forum->like($id);
 		return redirect('/discuss');
 	}
+
 }
 ?>

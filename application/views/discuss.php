@@ -47,22 +47,35 @@
 			<h1>Here are the Top Posts:</h1>
 		</div>
 			<?php foreach($posts as $pos){?>
-			<br>
-		<div class="posts_comms">
-				<h3 class="head_post"><b>By: </b> <?= $pos['name'] ?></h3>
-				<h3 class="head_post2"><b>Subject: </b> <?= $pos['subject'] ?></h3>
-				<h3 class="head_post2"><b>Posted at: <?= $pos['created_at'] ?></b></h3>
-				<h4><i><?= $pos['post_data'] ?></i></h4>
-				<div class="likes_comms">
-					<a class="head_post" href="/who_likes/<?= $pos['po_id'] ?>"><p><?= $pos['p_likes'] ?> likes</p></a>
-					<a class="head_post2" href="/comments/<?= $pos['po_id'] ?>"><p><?= $pos['c_count'] ?> Comments</p></a>
-					<form class="head_post3" action="/comment_create/<?= $pos['po_id'] ?>" method="post">
-						Comment:<input class="comment" type="text" name="comment_data">
-						<input class="comment_submit" type="submit" value="submit">
-					</form>
+				<br>
+				<div class="posts_comms">
+					<h3 class="head_post"><b>By: </b> <?= $pos['name'] ?></h3>
+					<h3 class="head_post2"><b>Subject: </b> <?= $pos['subject'] ?></h3>
+					<h3 class="head_post2"><b>Posted at: <?= $pos['created_at'] ?></b></h3>
+					<h4><i><?= $pos['post_data'] ?></i></h4>
+					<div class="likes_comms">
+					
+					<?php if($user_likes){ 
+							for($x = 0; $x < count($user_likes); $x++){
+								if($pos['po_id'] === $user_likes[$x]['post_id']){?>
+									<p class="head_post"><i>Liked!</i></p>
+									<?php break; ?>
+							<?php }else{ ?>
+									<a class="head_post" href="/who_likes/<?= $pos['po_id'] ?>"><p><?= $pos['p_likes'] ?> likes</p></a>
+									<?php break; ?>
+							<?php } ?>
+						<?php } ?>
+					<?php } else { ?>
+						<a class="head_post" href="/who_likes/<?= $pos['po_id'] ?>"><p><?= $pos['p_likes'] ?> likes</p></a>
+					<?php } ?>
+						<a class="head_post2" href="Forums/comments/<?= $pos['po_id'] ?>"><p><?= $pos['c_count'] ?> Comments</p></a>
+						<form class="head_post3" action="/comment_create/<?= $pos['po_id'] ?>" method="post">
+							Comment:<input class="comment" type="text" name="comment_data">
+							<input class="comment_submit" type="submit" value="submit">
+						</form>
+					</div>
+				<br>
 				</div>
-			<br>
-		</div>
 			<?php } ?>
 		<br>
 	</div>
