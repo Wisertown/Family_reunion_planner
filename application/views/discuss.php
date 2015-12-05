@@ -19,8 +19,8 @@
 			<?php } else { ?>
 
 		    <?php } ?>
-			<a class="discuss_comms" href="/your_post_comms"><button class="forum_btn">Your Posts</button></a>
-			<a class="discuss_help" href="/help"><button class="forum_btn">Need Help?</button></a>
+			<!-- <a class="discuss_comms" href="/your_post_comms"><button class="forum_btn">Your Posts</button></a> -->
+			<!-- <a class="discuss_help" href="/help"><button class="forum_btn">Need Help?</button></a> -->
 		</div>
 		<div id="the_wrap3">
 				<div id="createpost">

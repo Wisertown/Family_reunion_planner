@@ -472,6 +472,7 @@ td, th {
 	}
 
 #the_wrap4 {
+		overflow: scroll;
 		padding: 2px 2px 2px 2px;
 		margin-top: 4%;
 		margin-bottom: 1%;
