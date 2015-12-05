@@ -489,7 +489,7 @@ td, th {
 
 
 	.posts_comms {
-		margin-left: 5%;
+		margin-left: 2%;
 		margin-right: 5%;
 		border-radius: 5px;
 		overflow: scroll;
@@ -499,13 +499,16 @@ td, th {
 		line-height:85%;
 	}
 	.head_post {
+		vertical-align: top;
 		display: inline-block;
+
 
 	}
 	.head_post2 {
 		display: inline-block;
 		margin-left: 15px;
 	}
+
 	.likes_comms {
 		display: inline-block;
 		width: 50%
@@ -548,10 +551,72 @@ td, th {
 		margin-left: 15px;
 		width: 70%;
 	}
+	.head_post4 {
+		display: block;
+		width: 90%;
+	
+
+	}
 
 .head{
 	margin-left: 2%;
 }
+#post_display {
+	display: inline-block;
+	padding: 2px 2px 2px 2px;
+	margin-top: 4%;
+	margin-bottom: 1%;
+	border-radius: 5px;
+	background-color: #FF7F50;
+	background-opacity: 0.3;
+	width: 40%;
+	min-height: 200px;
+	margin-left: 7%;
+	-webkit-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+	-moz-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+	box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+}
+.posts_comms2 {
+	width: 90%;
+	display: inline-block;
+	margin-left: 2%;
+	margin-right: 5%;
+	border-radius: 5px;
+	overflow: scroll;
+	background-color: #FF7F50;
+	padding-left: 10px;
+	padding-right: 10px;
+	line-height:85%;
+}
+.show_likes2 {
+	vertical-align: top;
+	width: 50%;
+	display: inline-block;
+	margin-left: 2%;
+	margin-right: 2%;
+	border-radius: 5px;
+	overflow: scroll;
+	background-color: #FF7F50;
+	padding-left: 10px;
+	padding-right: 10px;
+	line-height:85%;
+}
+#post_display2 {
+	vertical-align: top;
+	display: inline-block;
+	padding: 2px 2px 2px 2px;
+	margin-top: 4%;
+	margin-bottom: 1%;
+	border-radius: 5px;
+	background-color: #FF7F50;
+	background-opacity: 0.3;
+	width: 40%;
+	min-height: 200px;
+	margin-left: 2%;
+	-webkit-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+	-moz-box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+	box-shadow: 13px 13px 21px 2px rgba(0,0,0,0.51);
+			
 
 
 

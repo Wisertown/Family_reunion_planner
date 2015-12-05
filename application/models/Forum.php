@@ -50,9 +50,17 @@ class Forum extends CI_Model {
 		return TRUE;
 		}
 	}
+	public function get_post_by_id($id)
+	{
+		$query = "SELECT users.name, users.id, posts.id, posts.likes_ as likecount, posts.created_at, posts.post_data, posts.subject, posts.user_id from users join posts on users.id = posts.user_id where posts.id = ?";
+		$values = array($id);
+		return $this->db->query($query, $values)->row_array();
+	}
 	public function show_comms($id)
 	{
-		$query = "SELECT "
+		$query = "SELECT distinct(users.name), users.id as use_id, comments.user_id, comments.comment_data, comments.created_at, comments.id as comm_id, comments.post_id from comments join users on comments.user_id = users.id where comments.post_id = ? group by users.name";
+		$values = array($id);
+		return $this->db->query($query, $values)->result_array();
 	}
 	public function like($id){
 		$query = "INSERT into likes (post_id, user_id, like_, created_at, updated_at) values (?, ?, 1, NOW(), NOW())";
@@ -68,6 +76,12 @@ class Forum extends CI_Model {
 	{
 		$query = "SELECT post_id from likes where likes.user_id = ?";
 		$values = array($this->session->userdata('id'));
+		return $this->db->query($query, $values)->result_array();
+	}
+	public function get_post_likers($id)
+	{
+		$query = "SELECT distinct(users.name) as u_name, users.id, sum(likes.like_), likes.post_id, likes.user_id from users JOIN likes on users.id = likes.user_id where likes.post_id = ? group by users.name;";
+		$values = array($id);
 		return $this->db->query($query, $values)->result_array();
 	} 
 }

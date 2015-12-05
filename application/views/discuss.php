@@ -29,6 +29,7 @@
 					<p>Subject:</p><input type="text" name="subject">
 					<p>Post:</p><textarea name="post_data" id="" cols="30" rows="4"></textarea>
 					<br>
+					<!-- user can only submit 2 posts. -->
 					<?php if($user['pswitch'] == 2){?>
 						<p>You can only submit 2 posts</p>
 					<?php }else {?>
@@ -53,7 +54,7 @@
 
 		 	<?php	//iterates through $user_likes to pull out array of arrays
 		 			// and convert from string to Integer.
-		 			// this way data is easier to manage.
+		 			// this way data is easier to manage. A.W.
 		 		$p = 0;
 		 		$j = 0;
 		 		$value = [];
@@ -67,7 +68,8 @@
 				<div class="posts_comms">
 					<h3 class="head_post"><b>By: </b> <?= $pos['name'] ?></h3>
 					<h3 class="head_post2"><b>Subject: </b> <?= $pos['subject'] ?></h3>
-					<h3 class="head_post2"><b>Posted at: <?= $pos['created_at'] ?></b></h3>
+					<?php $date = strtotime($pos['created_at']); ?>
+					<h3 class="head_post2"><b>Posted at: <?= date('M d Y', $date) ?></b></h3>
 					<h4><i><?= $pos['post_data'] ?></i></h4>
 					<div class="likes_comms">
 					
@@ -76,8 +78,8 @@
 					if(empty($value)){ ?> 
 						<a class="head_post" href="/who_likes/<?= $pos['po_id'] ?>"><p><?= $pos['p_likes'] ?> likes</p></a>
 					 <?php } else { ?>
-							<?php $p = 0; $j = 0; ?>
 					<!-- I declare variables to add to checks and if statements -->
+							<?php $p = 0; $j = 0; ?>
 					<!-- for loop to check each post to see it has been liked -->
 						<?php for($x = 0; $x < count($value); $x++){
 								if($pos['po_id'] == $value[$x]){?>
@@ -89,7 +91,8 @@
 							<?php } ?>
 
 						<?php } ?>
-						<!-- conditional so that I can get a clickable link -->
+						<!-- conditional so that I can get a clickable link if it hasn't been liked-->
+						<!-- $p and $j were declared earlier. -->
 					<?php if($p > 0 && $j == 0){ ?>
 						<a class="head_post" href="/who_likes/<?= $pos["po_id"] ?>"><p><?= $pos["p_likes"]?> likes</p></a>
 					<?php }?>
