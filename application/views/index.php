@@ -36,8 +36,8 @@
 					<h3>Don't have a username or Password?</h3>
 					<h4>Please email Uncle Bob</h4>
 					<form actionmethod="post">
-						From: <input class="in" type="from" type="email"/><br />
-	  					<input class="in" name="address" type="hidden" value="aaron.wise253@gmail.com"/><br />
+						From: <input class="in" name="fr_email"/><br />
+	  					<input type="hidden" name="to_email" value="wiserton27@gmail.com">
 	  					Subject: <input class="in" name="subject" type="text" /><br />
 	  					<br>
 	  					Message:<br />
