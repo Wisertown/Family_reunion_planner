@@ -36,6 +36,8 @@
 					<h3>Don't have a username or Password?</h3>
 					<h4>Please email Uncle Bob</h4>
 					<form action="Emails/send" method="post">
+
+						Your Email:<input type="text" id="fr_email" name="fr_email" value="<?php set_value('fr_email')?>">
 	  					<input type="hidden" name="to_email" value="wiserton27@gmail.com">
 	  					Subject: <input id="subject" class="in" name="subject" type="text" value="Create my account <?php set_value('subject')?>"/><br />
 
