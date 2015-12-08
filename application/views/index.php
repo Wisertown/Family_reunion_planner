@@ -35,13 +35,13 @@
 				<div id="email">
 					<h3>Don't have a username or Password?</h3>
 					<h4>Please email Uncle Bob</h4>
-					<form actionmethod="post">
-						From: <input class="in" name="fr_email"/><br />
+					<form action="Emails/send" method="post">
 	  					<input type="hidden" name="to_email" value="wiserton27@gmail.com">
-	  					Subject: <input class="in" name="subject" type="text" /><br />
-	  					<br>
+	  					Subject: <input id="subject" class="in" name="subject" type="text" value="Create my account <?php set_value('subject')?>"/><br />
+
 	  					Message:<br />
-	  					<textarea name="comment" rows="5" cols="40"></textarea><br />
+	  					<textarea id="comment_id" name="comment" contenteditable rows="5" cols="40" value="<?php set_value('comment')?>">My name is : [BLANK] My email address is : [BLANK] and I would like an account. Thank you.
+	  					</textarea><br />
 	  					<input class="btn" type="submit" value="Submit" />
   					</form>
 				</div>
