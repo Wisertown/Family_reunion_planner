@@ -1,7 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+// sends email with gmail
+class Emails extends CI_Controller {
 
-class Users extends CI_Controller {
+	function __construct(){
+		parent::Controller();
+	}
 
 		$this->load->library('email');
 
