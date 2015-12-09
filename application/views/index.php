@@ -7,6 +7,7 @@
 	<title>Smith Family Reunion Page</title>
 </head>
 <body>
+
 	<div id="chunk">
 		<head id="head">
 			<img class="pic1" src="/assets/img/Smith_family.jpg" alt="The smith family">
@@ -37,12 +38,12 @@
 					<h4>Please email Uncle Bob</h4>
 					<form action="Emails/send" method="post">
 
-						Your Email:<input type="text" id="fr_email" name="fr_email" value="<?php set_value('fr_email')?>">
+						Your Email:<input type="text" id="fr_email" name="fr_email" value="<?php set_value('fr_email')?>"><br>
 	  					<input type="hidden" name="to_email" value="wiserton27@gmail.com">
 	  					Subject: <input id="subject" class="in" name="subject" type="text" value="Create my account <?php set_value('subject')?>"/><br />
 
 	  					Message:<br />
-	  					<textarea id="comment_id" name="comment" contenteditable rows="5" cols="40" value="<?php set_value('comment')?>">My name is : [BLANK] My email address is : [BLANK] and I would like an account. Thank you.
+	  					<textarea id="comment_id" name="comment" contenteditable rows="5" cols="40" value="<?php set_value('comment')?>">My name is : [BLANK], and I would like an account. Thank you.
 	  					</textarea><br />
 	  					<input class="btn" type="submit" value="Submit" />
   					</form>

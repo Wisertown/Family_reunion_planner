@@ -14,7 +14,7 @@ class Emails extends CI_Controller {
 			$this->session->set_flashdata('errors', validation_errors());
 		}else{
 			
-			$fr_email = $this->input->post('fr_email')
+			$fr_email = $this->input->post('fr_email');
 			$to_email = $this->input->post('to_email');
 			$subject = $this->input->post('subject');
 			$comm = $this->input->post('comment');
@@ -29,7 +29,10 @@ class Emails extends CI_Controller {
 
 			if($this->email->send())
 			{
-				redirect('/emailsent');
+				echo("<script>
+				alert('Your email has been sent!');
+				window.location.href='/';
+				</script>");
 			}
 			else 
 			{
